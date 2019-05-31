@@ -8,13 +8,16 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 import user from './images/user.png';
 import user1 from './images/user1.png';
+import password from './images/password.png';
 
 const { width: WIDTH } = Dimensions.get('window');
 
 export default class Login extends React.Component {
+  static navigationOptions = {
+    title: 'Login',
+  }
   render() {
     return (
       <View style={styles.backgrounds}>
@@ -53,7 +56,7 @@ export default class Login extends React.Component {
         <Text style={styles.text}>Forgot Password? Click here </Text>
         </View>
 
-        <TouchableOpacity style={styles.btnLogin}>
+        <TouchableOpacity style={styles.btnLogin}  onPress={() => this.props.navigation.navigate('main')}>
           <Text style={styles.btntext}>Login</Text>
         </TouchableOpacity>
 

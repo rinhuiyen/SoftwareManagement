@@ -8,9 +8,8 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import user from './images/user.png';
 import user1 from './images/user1.png';
+import password from './images/password.png';
 
 const { width: WIDTH } = Dimensions.get('window');
 
@@ -19,7 +18,7 @@ export default class SignUp extends React.Component {
     return (
       <View style={styles.backgrounds}>
         <View style={styles.logoContainer}>
-          <Text style={styles.logoText}>Login</Text>
+          <Text style={styles.logoText}>Sign Up</Text>
         </View>
 
         <View style={styles.SectionStyle}>
@@ -63,7 +62,10 @@ export default class SignUp extends React.Component {
         </View>
 
         <View>
-        <Text style={styles.text}>Already Sign up? Click here</Text>
+        <Text style={styles.text}>Already Sign up?</Text>
+        <TouchableOpacity  onPress={() => this.props.navigation.navigate('login')}>
+        <Text style={styles.text}> Click here</Text>
+        </TouchableOpacity>
         </View>
 
         <TouchableOpacity style={styles.btnSignUp}>

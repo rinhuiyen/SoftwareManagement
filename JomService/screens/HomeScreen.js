@@ -26,10 +26,12 @@ export default class HomeScreen extends React.Component {
         <Text style={styles.paragraph}>
           Jom Service
         </Text>
-        <TouchableOpacity style={styles.btnLogin}>
+        <TouchableOpacity style={styles.btnLogin}
+        onPress={() => this.props.navigation.navigate('login')}>
           <Text style={styles.text}>Login</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btnLogin}>
+        <TouchableOpacity style={styles.btnLogin}
+        onPress={() => this.props.navigation.navigate('signUp')}>
           <Text style={styles.text}>Sign Up</Text>
         </TouchableOpacity>
       </View>
