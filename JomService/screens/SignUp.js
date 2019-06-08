@@ -14,6 +14,9 @@ import password from './images/password.png';
 const { width: WIDTH } = Dimensions.get('window');
 
 export default class SignUp extends React.Component {
+  static navigationOptions = {
+    title: 'signUp',
+  }
   render() {
     return (
       <View style={styles.backgrounds}>

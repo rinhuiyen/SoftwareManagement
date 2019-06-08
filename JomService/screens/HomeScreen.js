@@ -11,8 +11,6 @@ import {
 } from 'react-native';
 import { Constants } from 'expo';
 
-import { MonoText } from '../components/StyledText';
-
 const { width: WIDTH } = Dimensions.get('window');
 
 export default class HomeScreen extends React.Component {
