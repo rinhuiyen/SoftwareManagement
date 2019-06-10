@@ -56,7 +56,7 @@ export default class Login extends React.Component {
         <Text style={styles.text}>Forgot Password? Click here </Text>
         </View>
 
-        <TouchableOpacity style={styles.btnLogin}  onPress={() => this.props.navigation.navigate('main')}>
+        <TouchableOpacity style={styles.btnLogin}  onPress={() => this.props.navigation.navigate('selection')}>
           <Text style={styles.btntext}>Login</Text>
         </TouchableOpacity>
 

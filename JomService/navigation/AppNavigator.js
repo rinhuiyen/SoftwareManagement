@@ -5,6 +5,8 @@ import Login from '../screens/Login';
 import SignUp from '../screens/SignUp';
 import MainScreen from '../screens/MainScreen';
 import PostScreen from '../screens/PostScreen';
+import Message from '../screens/Message';
+import SelectionScreen from '../screens/SelectionScreen';
 
 const RootStack = createStackNavigator({
   Home: HomeScreen,
@@ -12,6 +14,8 @@ const RootStack = createStackNavigator({
   signUp: SignUp,
   main: MainScreen,
   post: PostScreen,
+  message: Message,
+  selection: SelectionScreen,
 },
 {
   initialRouteName: 'Home',

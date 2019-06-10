@@ -16,14 +16,12 @@ export default class MainScreen extends React.Component{
         request: [],
         jobInput : "",
         priceInput : '',
+        titleInput: "",
         list : [
         {
+        title: "Queue",
         job : "Queueing Up",
         price: 10,
-        },
-        {
-            job : "Pick Up",
-            price: 5,
         },
         
     ],
@@ -36,6 +34,7 @@ mounting(){
 
     submitData() {
         newData = {
+            title: this.state.titleInput,
             job: this.state.jobInput,
             price: this.state.priceInput
         }
@@ -46,28 +45,20 @@ mounting(){
         })
         this.props.navigation.navigate('post',{item: this.state.list});
     }
-
-    renderItems = ({item}) =>{
-        return(
-            <View>
-                <Text>
-                    {item.job}
-                </Text>
-                <Text>
-                    {item.price}
-                </Text>
-            </View>
-        )
-    }
     
     
     render() {
         return(
         <View>
             <View style={styles.logoContainer}>
-            <Text style={styles.logoText}>Post</Text>
+            <Text style={styles.logoText}>Create a Post</Text>
             </View>
-
+            <View style={styles.SectionStyle}>
+            <TextInput type="text" value={this.state.titleInput} 
+            onChangeText={(titleInput) => this.setState({titleInput})}
+            placeholder='Job Title'
+            />
+            </View>
             <View style={styles.SectionStyle}>
             <TextInput type="text" value={this.state.jobInput} 
             onChangeText={(jobInput) => this.setState({jobInput})}
@@ -86,12 +77,7 @@ mounting(){
             <TouchableOpacity onPress={()=>this.submitData()} style={styles.btnPost}>
             <Text style={styles.text}>Submit</Text>
             </TouchableOpacity>
-            <FlatList
-            keyExtractor={(index) => index.toString()}
-            data={this.state.list}
-            extraData={this.state.request}
-            renderItem={this.renderItems}
-            />
+            
         </View>
         );
     }
