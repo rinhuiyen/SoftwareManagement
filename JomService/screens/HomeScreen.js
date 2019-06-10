@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
-    fontFamily: 'sans-serif',
   },
   btnLogin: {
   width: WIDTH -55,

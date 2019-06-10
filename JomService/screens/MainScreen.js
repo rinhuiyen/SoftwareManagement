@@ -17,23 +17,15 @@ export default class MainScreen extends React.Component{
         jobInput : "",
         priceInput : '',
         titleInput: "",
-        list : [
-        {
-        title: "Queue",
-        job : "Queueing Up",
-        price: 10,
-        },
-        
-    ],
-    
-}
+        list : this.props.navigation.getParam('item')
+    }
 
 mounting(){
-    this.setState({request:[this.state.list]})
+    this.setState({request:this.state.list})
 }
 
     submitData() {
-        newData = {
+        var newData = {
             title: this.state.titleInput,
             job: this.state.jobInput,
             price: this.state.priceInput
@@ -53,19 +45,30 @@ mounting(){
             <View style={styles.logoContainer}>
             <Text style={styles.logoText}>Create a Post</Text>
             </View>
+
+
+
+
+            
             <View style={styles.SectionStyle}>
+
+
             <TextInput type="text" value={this.state.titleInput} 
             onChangeText={(titleInput) => this.setState({titleInput})}
             placeholder='Job Title'
             />
             </View>
             <View style={styles.SectionStyle}>
+
+
             <TextInput type="text" value={this.state.jobInput} 
             onChangeText={(jobInput) => this.setState({jobInput})}
             placeholder='Job Description'
             />
             </View>
             <View >
+
+
             <TextInput 
              style={styles.SectionStyle}
              keyboardType='numeric'
@@ -74,6 +77,10 @@ mounting(){
              value={this.state.priceInput}
              maxLength={10}
             /></View>
+
+
+
+
             <TouchableOpacity onPress={()=>this.submitData()} style={styles.btnPost}>
             <Text style={styles.text}>Submit</Text>
             </TouchableOpacity>
