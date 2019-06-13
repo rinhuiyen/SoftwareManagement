@@ -24,15 +24,6 @@ export default class SelectionScreen extends React.Component {
                 job: "Queueing Up",
                 price: 10,
             },
-            {
-                title: "Queue",
-                job: "Queueing Up",
-                price: 10,
-            },{
-                title: "Queue",
-                job: "Queueing Up",
-                price: 10,
-            },
 
         ],
 

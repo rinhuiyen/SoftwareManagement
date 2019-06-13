@@ -52,11 +52,9 @@ export default class PostScreen extends React.Component {
     render() {
         const { params } = this.props.navigation.state;
         const item = params ? params.item : null;
-        const scrollEnabled = this.state.screenHeight > height;
         return (
             <ScrollView
                 style={{ flex: 1 }}
-                scrollEnabled={scrollEnabled}
                 onContentSizeChange={this.onContentSizeChange}
             >
                 <View>
