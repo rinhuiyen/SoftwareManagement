@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     },
     btnMain: {
         width: WIDTH - 25,
-        height: 45,
+        height: 44,
         borderRadius: 10,
         backgroundColor: '#607446',
         marginTop: 5,
