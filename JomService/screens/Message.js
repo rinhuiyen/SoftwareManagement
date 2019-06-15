@@ -13,7 +13,8 @@ const { width: WIDTH } = Dimensions.get('window');
 
 export default class Message extends React.Component {
     state={
-        screenHeight: 0
+        screenHeight: 0,
+        message: this.props.navigation.getParam({data})
     }
     onContentSizeChange = (contentHeight) => {
         this.state.screenHeight = 0

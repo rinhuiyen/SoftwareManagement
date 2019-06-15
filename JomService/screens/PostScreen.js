@@ -22,13 +22,18 @@ export default class PostScreen extends React.Component {
         screenHeight: 0,
     }
 
+    selectItem(index){
+        var data = this.state.item[index]
+        this.props.navigation.navigate('message',{data})
+    }
+
     onContentSizeChange = (contentHeight) => {
         this.state.screenHeight = 0
         // Save the content height in state
         this.setState({ screenHeight: contentHeight });
     };
 
-    renderItems = ({ item }) => {
+    renderItems = ({ item, index }) => {
 
         return (
             <View style={styles.element}>
