@@ -86,10 +86,11 @@ mounting(){
 
 const styles = StyleSheet.create({
     mainScreen:{
-        backgroundColor:'#607446',
+        backgroundColor:'#fff',
         flex:1,
     },
     SectionStyle: {
+        textAlign: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -114,13 +115,13 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         color: 'rgba(255, 255, 255, 0.7)',
         fontSize: 16,
-        textAlign: 'center'
+        textAlign: 'center',
       },
       btnPost: {
         width: WIDTH -55,
         height: 45,
         borderRadius: 25,
-        backgroundColor: '#640A61',
+        backgroundColor: '#607446',
         marginTop: 20,
         marginHorizontal: 25
       },

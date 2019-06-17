@@ -25,9 +25,6 @@ export default class HomeScreen extends React.Component {
         <View style={styles.logoContainer}>
           <Image source={logo} style={styles.logo} />
         </View>
-        <Text style={styles.paragraph}>
-          Jom Service
-        </Text>
         <TouchableOpacity style={styles.btnLogin}
         onPress={() => this.props.navigation.navigate('login')}>
           <Text style={styles.text}>Login</Text>
