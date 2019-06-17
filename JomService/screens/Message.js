@@ -12,8 +12,10 @@ import { Constants } from 'expo';
 const { width: WIDTH } = Dimensions.get('window');
 
 export default class Message extends React.Component {
+
     state={
-        screenHeight: 0
+        screenHeight: 0,
+        list : this.props.navigation.getParam('item')
     }
     onContentSizeChange = (contentHeight) => {
         this.state.screenHeight = 0
@@ -21,6 +23,8 @@ export default class Message extends React.Component {
         this.setState({ screenHeight: contentHeight });
     };
     render(){
+        const { params } = this.props.navigation.state;
+        const message = params ? params.message : null;
         return(
                 <View style={styles.views}>
                     <ScrollView 
@@ -33,35 +37,8 @@ export default class Message extends React.Component {
                         borderBottomColor: 'black',
                         borderBottomWidth: 3,}}
                     />
-                    <Text style={               styles.logoText}>Client information: </Text>
-                    <Image style={styles.imgprofile} source={require("./images/profilepic.png")} />
-                    <Text style={styles.name}>
-                        BTS JIN DK
-                    </Text>
-                    <Text style={styles.username}>
-                        @BTSJINDK
-                    </Text>
-
-                    <View style={styles.itemprofile}>
-                        <Image style={styles.imgitem} source={require("./images/name.png")} />
-                        <Text style={styles.labelitem}>
-                            Name:
-                        </Text>
-                        <Text style={styles.sublabelitem}>
-                            BTSJINDK
-                        </Text>
-                    </View> 
-
-                     <View style={styles.itemprofile}>
-                        <Image style={styles.imgitem} source={require("./images/contact.png")} />
-                        <Text style={styles.labelitem}>
-                            Contact Number:
-                        </Text>
-                        <Text style={styles.sublabelitem}>
-                            016-2244556
-                        </Text>
-                    </View>
-                    </ScrollView>    
+                    </ScrollView>
+                    <Text>{JSON.stringify(this.state.list)}</Text>    
                 </View>
             
         )

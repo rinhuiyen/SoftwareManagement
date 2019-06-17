@@ -10,6 +10,7 @@ import {
   Dimensions,
 } from 'react-native';
 import { Constants } from 'expo';
+import logo from './images/logo.png';
 
 const { width: WIDTH } = Dimensions.get('window');
 
@@ -21,6 +22,12 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.logoContainer}>
+          <Image source={logo} style={styles.logo} />
+        </View>
+        <Text style={styles.paragraph}>
+          Welcome! Your one stop Life Assitance!
+        </Text>
         <Text style={styles.paragraph}>
           Jom Service
         </Text>
@@ -43,12 +50,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#607446',
+    backgroundColor: '#A6D668',
     padding: 8,
   },
   paragraph: {
-    margin: 24,
-    fontSize: 30,
+    margin: 10,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -57,7 +64,7 @@ const styles = StyleSheet.create({
   height: 45,
   borderRadius: 25,
   backgroundColor: '#432577',
-  marginTop: 20,
+  marginTop: 10,
   marginHorizontal: 25
 },
 text: {
@@ -65,5 +72,12 @@ text: {
   color: 'rgba(255, 255, 255, 0.7)',
   fontSize: 16,
   textAlign: 'center'
-}
+},
+logo: {
+  width: 300,
+  height: 300,
+},
+logoContainer: {
+  alignItems: 'center',
+},
 });

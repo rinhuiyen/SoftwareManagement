@@ -5,11 +5,13 @@ import {
   View,
   Dimensions,
   TextInput,
-  Image,
-  TouchableOpacity
+  ImageBackground,
+  TouchableOpacity,
+  Image
 } from 'react-native';
 import user1 from './images/user1.png';
 import password from './images/password.png';
+import signUpB from './images/signUpB.jpg';
 
 const { width: WIDTH } = Dimensions.get('window');
 
@@ -19,10 +21,15 @@ export default class SignUp extends React.Component {
   }
   render() {
     return (
-      <View style={styles.backgrounds}>
+      <ImageBackground source={require('./images/signUpB.jpg')}
+            style={{flex:1}}>
+      <View style={{marginTop: 50}}>
+        <Image source={require('./images/signUpB.jpg')}
+            style={styles.backgroundImage}/>
         <View style={styles.logoContainer}>
           <Text style={styles.logoText}>Sign Up</Text>
         </View>
+        <View style={{marginTop: 30}}>
 
         <View style={styles.SectionStyle}>
           <Image
@@ -63,6 +70,7 @@ export default class SignUp extends React.Component {
             underlineColorAndroid="transparent"
           />
         </View>
+        </View>
 
         <View>
         <Text style={styles.text}>Already Sign up?</Text>
@@ -71,27 +79,28 @@ export default class SignUp extends React.Component {
         </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.btnSignUp}>
+        <TouchableOpacity style={styles.btnSignUp} onPress={() => this.props.navigation.navigate('login')}>
           <Text style={styles.btntext}>Sign Up</Text>
         </TouchableOpacity>
-
+        
       </View>
+      </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
   
-  logo: {
-    width: 300,
-    height: 300,
+  backgroundImage: {
+    flex: 1,
+    alignItems: 'center'
   },
   logoContainer: {
     alignItems: 'center',
   },
   logoText: {
     color: 'black',
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: '500',
     marginTop: 10,
     opacity: 0.5,
@@ -121,7 +130,7 @@ btnSignUp: {
   width: WIDTH -55,
   height: 45,
   borderRadius: 25,
-  backgroundColor: '#607446',
+  backgroundColor: '#432577',
   marginTop: 20,
   marginHorizontal: 25
 },
@@ -133,5 +142,5 @@ btntext: {
 },
 text: {
   marginHorizontal: 15
-}
+},
 });

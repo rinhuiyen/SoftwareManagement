@@ -18,6 +18,7 @@ export default class MainScreen extends React.Component{
         priceInput : '',
         titleInput: "",
         list : this.props.navigation.getParam('item')
+        
     }
 
 mounting(){
@@ -44,14 +45,8 @@ mounting(){
         <View>
             <View style={styles.logoContainer}>
             <Text style={styles.logoText}>Create a Post</Text>
-            </View>
-
-
-
-
-            
+            </View>            
             <View style={styles.SectionStyle}>
-
 
             <TextInput type="text" value={this.state.titleInput} 
             onChangeText={(titleInput) => this.setState({titleInput})}

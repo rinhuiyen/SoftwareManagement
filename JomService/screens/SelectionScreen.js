@@ -39,7 +39,7 @@ export default class SelectionScreen extends React.Component {
     render() {
         return (
             <View>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('main', { item: this.state.list, name: 'meng' })} style={styles.btnMain}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('main', { item: this.state.list})} style={styles.btnMain}>
                     <Text style={styles.text}>Post a post</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.submitData()} style={styles.btnMain}>

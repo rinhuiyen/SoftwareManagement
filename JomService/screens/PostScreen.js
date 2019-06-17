@@ -18,8 +18,18 @@ const { height } = Dimensions.get('window');
 
 export default class PostScreen extends React.Component {
     state = {
-        item: this.props.navigation.getParam('item'),
         screenHeight: 0,
+        list : this.props.navigation.getParam('item')
+    }
+
+    mounting(){
+        this.setState({request:this.state.list})
+        this.props.navigation.navigate('main',{item: this.state.list});
+    }
+
+    selectItem (index) {
+        this.setState({item :this.state.list})
+        this.props.navigation.navigate('message', {item: this.state.list[index]})
     }
 
     onContentSizeChange = (contentHeight) => {
@@ -28,9 +38,10 @@ export default class PostScreen extends React.Component {
         this.setState({ screenHeight: contentHeight });
     };
 
-    renderItems = ({ item }) => {
-
+    renderItems = ({ item, index }) => {
+        console.log(index);
         return (
+            
             <View style={styles.element}>
 
                 <Text style={styles.containerTitle}>
@@ -42,7 +53,7 @@ export default class PostScreen extends React.Component {
                 <Text style={styles.prices}>
                     Price: RM {item.price}
                 </Text>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('message')} style={styles.btnPost}>
+                <TouchableOpacity onPress={() => this.selectItem(index)} style={styles.btnPost}>
                     <Text style={styles.text}>Accept</Text>
                 </TouchableOpacity>
             </View>
@@ -63,8 +74,9 @@ export default class PostScreen extends React.Component {
                         data={item}
                         extraData={item}
                         renderItem={this.renderItems}
+                        
                     />
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('main')} style={styles.btnMain}>
+                    <TouchableOpacity onPress={() => this.mounting()} style={styles.btnMain}>
                         <Text style={styles.text}>Post a post</Text>
                     </TouchableOpacity>
 
