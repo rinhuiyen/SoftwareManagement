@@ -13,7 +13,7 @@ const { width: WIDTH } = Dimensions.get('window');
 
 export default class MainScreen extends React.Component{
     static navigationOptions = {
-        title: 'Post A Post',
+        title: 'Request for services',
       }
     state = {
         request: [],
@@ -49,10 +49,6 @@ mounting(){
             <Text style={styles.logoText}>Create a Post</Text>
             </View>
 
-
-
-
-            
             <View style={styles.SectionStyle}>
             <TextInput type="text" value={this.state.titleInput} 
             onChangeText={(titleInput) => this.setState({titleInput})}
@@ -90,7 +86,7 @@ mounting(){
 
 const styles = StyleSheet.create({
     mainScreen:{
-        backgroundColor:'#607446',
+        backgroundColor:'#fff',
         flex:1,
     },
     SectionStyle: {
@@ -124,7 +120,7 @@ const styles = StyleSheet.create({
         width: WIDTH -55,
         height: 45,
         borderRadius: 25,
-        backgroundColor: '#640A61',
+        backgroundColor: '#607446',
         marginTop: 20,
         marginHorizontal: 25
       },
