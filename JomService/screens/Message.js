@@ -15,6 +15,7 @@ const { width: WIDTH } = Dimensions.get('window');
 export default class Message extends React.Component {
 
     state={
+        title: 'History',
         screenHeight: 0,
         list : this.props.navigation.getParam('item')
     }
@@ -31,12 +32,8 @@ export default class Message extends React.Component {
                     <ScrollView 
                     style={{ flex: 1 }}
                     onContentSizeChange={this.onContentSizeChange}>
-                    <Text style={styles.logoText}>History:</Text>
-                    <View
-                    style={{
-                        borderBottomColor: 'black',
-                        borderBottomWidth: 3,}}
-                    />
+                    <Text style={styles.logoText}>Thanks for accepting!</Text>
+                    <Text style={styles.logoText1}>You can view your job details here:</Text>
                    <View style={styles.element}>
                        <Text style={styles.containerTitle}>
                         Title: {this.state.list.title}
@@ -48,6 +45,37 @@ export default class Message extends React.Component {
                         Price: RM {this.state.list.price}
                         </Text>
                     </View>
+                    <View
+                    style={{
+                        borderBottomColor: 'black',
+                        borderBottomWidth: 3,}}
+                    />
+                    <Text style={styles.logoText1}>Contact Client:</Text>
+
+                    <Image style={styles.imgprofile} source={require("./images/messageClient.png")} />
+                    <Text style={styles.name}>
+                        Andrew
+                    </Text>
+
+                    <View style={styles.itemprofile}>
+                        <Image style={styles.imgitem} source={require("./images/name.png")} />
+                        <Text style={styles.labelitem}>
+                            Name:
+                        </Text>
+                        <Text style={styles.sublabelitem}>
+                            Andrew
+                        </Text>
+                    </View>
+
+                     <View style={styles.itemprofile}>
+                        <Image style={styles.imgitem} source={require("./images/contact.png")} />
+                        <Text style={styles.labelitem}>
+                            Contact Number:
+                        </Text>
+                        <Text style={styles.sublabelitem}>
+                            016-22334455
+                        </Text>
+                    </View>    
                     </ScrollView> 
                 </View>
             
@@ -64,7 +92,7 @@ const styles = StyleSheet.create({
         width:100,
     },
     name:{
-        color:"white",
+        color:"#000000",
         fontSize:22,
         marginLeft:150,
         marginTop:12,
@@ -106,7 +134,7 @@ const styles = StyleSheet.create({
       },
       logoText: {
         color: 'black',
-        fontSize: 30,
+        fontSize: 50,
         fontWeight: '500',
         marginTop: 10,
         opacity: 0.5,
@@ -125,7 +153,7 @@ const styles = StyleSheet.create({
     },
     element: {
         flex: 1,
-        margin: 15,
+        margin: 10,
         justifyContent: 'center',
         borderRadius: 10,
         backgroundColor: "#0000",
@@ -139,12 +167,17 @@ const styles = StyleSheet.create({
     text: {
         padding: 10,
         fontSize: 20,
-        textAlign: 'center',
-        alignItems: 'center',
     },
     prices: {
         padding: 10,
         fontSize: 20,
-        alignSelf: 'flex-end'
     },
+    logoText1: {
+        color: 'black',
+        fontSize: 20,
+        fontWeight: '500',
+        marginTop: 10,
+        opacity: 0.5,
+        textAlign: 'center'
+      },
 });
