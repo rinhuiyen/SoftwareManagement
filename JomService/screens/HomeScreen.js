@@ -26,9 +26,6 @@ export default class HomeScreen extends React.Component {
           <Image source={logo} style={styles.logo} />
         </View>
         <Text style={styles.paragraph}>
-          Welcome! Your one stop Life Assitance!
-        </Text>
-        <Text style={styles.paragraph}>
           Jom Service
         </Text>
         <TouchableOpacity style={styles.btnLogin}
@@ -50,7 +47,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#A6D668',
+    backgroundColor: '#607446',
     padding: 8,
   },
   paragraph: {

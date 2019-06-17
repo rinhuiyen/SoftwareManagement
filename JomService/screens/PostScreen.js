@@ -23,11 +23,13 @@ export default class PostScreen extends React.Component {
     }
 
     mounting(){
+        
         this.setState({request:this.state.list})
         this.props.navigation.navigate('main',{item: this.state.list});
     }
 
     selectItem (index) {
+        alert("Job Accepted. An email will be send to you.")
         this.setState({item :this.state.list})
         this.props.navigation.navigate('message', {item: this.state.list[index]})
     }
@@ -53,7 +55,7 @@ export default class PostScreen extends React.Component {
                 <Text style={styles.prices}>
                     Price: RM {item.price}
                 </Text>
-                <TouchableOpacity onPress={() => this.selectItem(index)} style={styles.btnPost}>
+                <TouchableOpacity onPress={() => this.selectItem(index) } style={styles.btnPost}>
                     <Text style={styles.text}>Accept</Text>
                 </TouchableOpacity>
             </View>

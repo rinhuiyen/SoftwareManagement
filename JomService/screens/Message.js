@@ -5,7 +5,8 @@ import {
     Image,
     StyleSheet,
     Dimensions,
-    ScrollView
+    ScrollView,
+    FlatList
 } from 'react-native';
 import { Constants } from 'expo';
 
@@ -30,15 +31,20 @@ export default class Message extends React.Component {
                     <ScrollView 
                     style={{ flex: 1 }}
                     onContentSizeChange={this.onContentSizeChange}>
-                    <Image style={styles.paragraph} source={require("./images/check.png")} />
-                    <Text style={styles.logoText}>Job Accepted</Text>
-                    <View
-                    style={{
-                        borderBottomColor: 'black',
-                        borderBottomWidth: 3,}}
-                    />
-                    </ScrollView>
-                    <Text>{JSON.stringify(this.state.list)}</Text>    
+                    <Text style={styles.logoText}>Job Details:</Text>
+                    
+                   <View style={styles.element}>
+                       <Text style={styles.containerTitle}>
+                        Title: {this.state.list.title}
+                        </Text>
+                        <Text style={styles.text}>
+                        Description: {this.state.list.job}
+                        </Text>
+                        <Text style={styles.prices}>
+                        Price: RM {this.state.list.price}
+                        </Text>
+                    </View>
+                    </ScrollView> 
                 </View>
             
         )
@@ -87,13 +93,6 @@ const styles = StyleSheet.create({
         height:50,
         width:50
     },
-    paragraph: {
-        marginTop: 20,
-        marginLeft: 90,
-        alignItems: 'center',
-        height: 200,
-        width: 200
-      },
       logoText: {
         color: 'black',
         fontSize: 30,
@@ -107,5 +106,34 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingTop: Constants.statusBarHeight,
         padding: 8,
-      }
+      },
+      containerTitle: {
+        fontSize: 25,
+        textAlign: 'left',
+        padding: 5
+    },
+    element: {
+        flex: 1,
+        margin: 15,
+        justifyContent: 'center',
+        borderRadius: 10,
+        backgroundColor: "#0000",
+        shadowOpacity: 0.75,
+        shadowRadius: 2,
+        shadowColor: '#000000',
+        elevation: 3,
+        shadowOffset: { height: 10, width: 10 },
+        width: WIDTH - 25,
+    },
+    text: {
+        padding: 10,
+        fontSize: 20,
+        textAlign: 'center',
+        alignItems: 'center',
+    },
+    prices: {
+        padding: 10,
+        fontSize: 20,
+        alignSelf: 'flex-end'
+    },
 });
