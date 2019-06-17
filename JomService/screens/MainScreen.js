@@ -12,6 +12,9 @@ Dimensions
 const { width: WIDTH } = Dimensions.get('window');
 
 export default class MainScreen extends React.Component{
+    static navigationOptions = {
+        title: 'Post A Post',
+      }
     state = {
         request: [],
         jobInput : "",
@@ -41,7 +44,7 @@ mounting(){
     
     render() {
         return(
-        <View>
+        <View style={styles.mainScreen}>
             <View style={styles.logoContainer}>
             <Text style={styles.logoText}>Create a Post</Text>
             </View>
@@ -51,26 +54,21 @@ mounting(){
 
             
             <View style={styles.SectionStyle}>
-
-
             <TextInput type="text" value={this.state.titleInput} 
             onChangeText={(titleInput) => this.setState({titleInput})}
             placeholder='Job Title'
             />
             </View>
+
             <View style={styles.SectionStyle}>
-
-
             <TextInput type="text" value={this.state.jobInput} 
             onChangeText={(jobInput) => this.setState({jobInput})}
             placeholder='Job Description'
             />
             </View>
-            <View >
 
-
+            <View style={styles.SectionStyle}>
             <TextInput 
-             style={styles.SectionStyle}
              keyboardType='numeric'
              placeholder='Price'
              onChangeText={(priceInput)=> this.setState({priceInput})}
@@ -91,6 +89,10 @@ mounting(){
 }
 
 const styles = StyleSheet.create({
+    mainScreen:{
+        backgroundColor:'#607446',
+        flex:1,
+    },
     SectionStyle: {
         flexDirection: 'row',
         justifyContent: 'center',
@@ -99,7 +101,7 @@ const styles = StyleSheet.create({
         borderWidth: .5,
         borderColor: '#000',
         height: 40,
-        borderRadius: 5 ,
+        borderRadius: 5,
         margin: 10
     },
     logoContainer: {
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
         width: WIDTH -55,
         height: 45,
         borderRadius: 25,
-        backgroundColor: '#607446',
+        backgroundColor: '#640A61',
         marginTop: 20,
         marginHorizontal: 25
       },
