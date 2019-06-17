@@ -18,13 +18,20 @@ const { height } = Dimensions.get('window');
 
 export default class PostScreen extends React.Component {
     state = {
-        item: this.props.navigation.getParam('item'),
         screenHeight: 0,
+        list : this.props.navigation.getParam('item')
     }
 
-    selectItem(index){
-        var data = this.state.item[index]
-        this.props.navigation.navigate('message',{data})
+    mounting(){
+        
+        this.setState({request:this.state.list})
+        this.props.navigation.navigate('main',{item: this.state.list});
+    }
+
+    selectItem (index) {
+        alert("Job Accepted. An email will be send to you.")
+        this.setState({item :this.state.list})
+        this.props.navigation.navigate('message', {item: this.state.list[index]})
     }
 
     onContentSizeChange = (contentHeight) => {
@@ -34,8 +41,9 @@ export default class PostScreen extends React.Component {
     };
 
     renderItems = ({ item, index }) => {
-
+        console.log(index);
         return (
+            
             <View style={styles.element}>
 
                 <Text style={styles.containerTitle}>
@@ -47,8 +55,8 @@ export default class PostScreen extends React.Component {
                 <Text style={styles.prices}>
                     Price: RM {item.price}
                 </Text>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('message')} style={styles.btnPost}>
-                     <Text style={styles.text}>Accept</Text>
+                <TouchableOpacity onPress={() => this.selectItem(index) } style={styles.btnPost}>
+                    <Text style={styles.text}>Accept</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -68,8 +76,9 @@ export default class PostScreen extends React.Component {
                         data={item}
                         extraData={item}
                         renderItem={this.renderItems}
+                        
                     />
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('main')} style={styles.btnMain}>
+                    <TouchableOpacity onPress={() => this.mounting()} style={styles.btnMain}>
                         <Text style={styles.text}>Post a post</Text>
                     </TouchableOpacity>
 
@@ -91,8 +100,7 @@ const styles = StyleSheet.create({
     containerTitle: {
         fontSize: 25,
         textAlign: 'left',
-        padding: 5,
-        fontWeight: 'bold'
+        padding: 5
     },
     element: {
         flex: 1,
@@ -100,11 +108,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 10,
         backgroundColor: "#b8b894",
-        /*shadowOpacity: 0.75,
+        shadowOpacity: 0.75,
         shadowRadius: 2,
         shadowColor: '#000000',
         elevation: 3,
-        shadowOffset: { height: 10, width: 10 },*/
+        shadowOffset: { height: 10, width: 10 },
         width: WIDTH - 25,
         borderTopWidth: 1,
         borderLeftWidth: 1,
@@ -114,7 +122,8 @@ const styles = StyleSheet.create({
     text: {
         padding: 10,
         fontSize: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        alignItems: 'center',
     },
     prices: {
         padding: 10,
@@ -122,7 +131,6 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-end',
         fontWeight: 'bold'
     },
-
     btnPost: {
         width: WIDTH - 25,
         height: 45,
@@ -131,14 +139,13 @@ const styles = StyleSheet.create({
         marginTop: 5,
         opacity: 0.9
     },
-    
     btnMain: {
-        width: WIDTH - 25, 
+        width: WIDTH - 25,
         height: 45,
         borderRadius: 10,
         backgroundColor: '#607446',
         marginTop: 5,
-        margin: 15,
+        margin: 10,
         opacity: 0.9
     },
 })
