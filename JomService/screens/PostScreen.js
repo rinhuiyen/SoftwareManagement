@@ -48,7 +48,7 @@ export default class PostScreen extends React.Component {
                     Price: RM {item.price}
                 </Text>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('message')} style={styles.btnPost}>
-                     <Text style={styles.text}>Accept</Text>
+                    <Text style={styles.text}>Accept</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -91,54 +91,45 @@ const styles = StyleSheet.create({
     containerTitle: {
         fontSize: 25,
         textAlign: 'left',
-        padding: 5,
-        fontWeight: 'bold'
+        padding: 5
     },
     element: {
         flex: 1,
         margin: 15,
         justifyContent: 'center',
         borderRadius: 10,
-        backgroundColor: "#b8b894",
-        /*shadowOpacity: 0.75,
+        backgroundColor: "#0000",
+        shadowOpacity: 0.75,
         shadowRadius: 2,
         shadowColor: '#000000',
         elevation: 3,
-        shadowOffset: { height: 10, width: 10 },*/
+        shadowOffset: { height: 10, width: 10 },
         width: WIDTH - 25,
-        borderTopWidth: 1,
-        borderLeftWidth: 1,
-        borderRightWidth: 1,
-        borderColor: 'black'
     },
     text: {
         padding: 10,
         fontSize: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        alignItems: 'center',
     },
     prices: {
         padding: 10,
         fontSize: 20,
-        alignSelf: 'flex-end',
-        fontWeight: 'bold'
+        alignSelf: 'flex-end'
     },
-
     btnPost: {
         width: WIDTH - 25,
         height: 45,
         borderRadius: 10,
-        backgroundColor: '#607446',
+        backgroundColor: '#d3d3d3',
         marginTop: 5,
-        opacity: 0.9
     },
-    
     btnMain: {
-        width: WIDTH - 25, 
-        height: 45,
+        width: WIDTH - 25,
+        height: 44,
         borderRadius: 10,
         backgroundColor: '#607446',
         marginTop: 5,
-        margin: 15,
-        opacity: 0.9
+        margin: 10
     },
 })
