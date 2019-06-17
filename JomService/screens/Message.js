@@ -31,8 +31,12 @@ export default class Message extends React.Component {
                     <ScrollView 
                     style={{ flex: 1 }}
                     onContentSizeChange={this.onContentSizeChange}>
-                    <Text style={styles.logoText}>Job Details:</Text>
-                    
+                    <Text style={styles.logoText}>History:</Text>
+                    <View
+                    style={{
+                        borderBottomColor: 'black',
+                        borderBottomWidth: 3,}}
+                    />
                    <View style={styles.element}>
                        <Text style={styles.containerTitle}>
                         Title: {this.state.list.title}
@@ -93,6 +97,13 @@ const styles = StyleSheet.create({
         height:50,
         width:50
     },
+    paragraph: {
+        marginTop: 20,
+        marginLeft: 90,
+        alignItems: 'center',
+        height: 200,
+        width: 200
+      },
       logoText: {
         color: 'black',
         fontSize: 30,

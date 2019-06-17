@@ -5,13 +5,12 @@ import {
   View,
   Dimensions,
   TextInput,
-  ImageBackground,
+  Image,
   TouchableOpacity,
-  Image
+  ImageBackground
 } from 'react-native';
 import user1 from './images/user1.png';
 import password from './images/password.png';
-import signUpB from './images/signUpB.jpg';
 
 const { width: WIDTH } = Dimensions.get('window');
 
@@ -21,89 +20,93 @@ export default class SignUp extends React.Component {
   }
   render() {
     return (
-      <ImageBackground source={require('./images/signUpB.jpg')}
-            style={{flex:1}}>
-      <View style={{marginTop: 50}}>
-        <Image source={require('./images/signUpB.jpg')}
-            style={styles.backgroundImage}/>
-        <View style={styles.logoContainer}>
-          <Text style={styles.logoText}>Sign Up</Text>
-        </View>
-        <View style={{marginTop: 30}}>
-
-        <View style={styles.SectionStyle}>
-          <Image
-            source={require('./images/user1.png')}
-            style={styles.ImageStyle}
-          />
-
-          <TextInput
-            style={{ flex: 1 }}
-            placeholder="Username"
-            underlineColorAndroid="transparent"
-          />
-        </View>
-        <View style={styles.SectionStyle}>
-          <Image
-            source={require('./images/password.png')}
-            style={styles.ImageStyle}
-          />
-
-          <TextInput
-            style={{ flex: 1 }}
-            placeholder="Password"
-            secureTextEntry={true}
-            underlineColorAndroid="transparent"
-          />
-        </View>
-
-        <View style={styles.SectionStyle}>
-          <Image
-            source={require('./images/password.png')}
-            style={styles.ImageStyle}
-          />
-
-          <TextInput
-            style={{ flex: 1 }}
-            placeholder=" Confirm Password"
-            secureTextEntry={true}
-            underlineColorAndroid="transparent"
-          />
-        </View>
-        </View>
-
-        <View>
-        <Text style={styles.text}>Already Sign up?</Text>
-        <TouchableOpacity  onPress={() => this.props.navigation.navigate('login')}>
-        <Text style={styles.text}> Click here</Text>
-        </TouchableOpacity>
-        </View>
-
-        <TouchableOpacity style={styles.btnSignUp} onPress={() => this.props.navigation.navigate('login')}>
-          <Text style={styles.btntext}>Sign Up</Text>
-        </TouchableOpacity>
         
-      </View>
-      </ImageBackground>
+          <ImageBackground source={require('./images/signUpB.jpg')}
+            style={{flex:1}}>
+            <View style={styles.backgrounds}>
+            <Image source={require('./images/signUpB.jpg')}
+            style={styles.backgroundImage}/>
+
+          <View style={styles.logoContainer}>
+            <Text style={styles.logoText}>Sign Up</Text>
+          </View>
+          
+          <View style={styles.SectionStyle}>
+            <Image
+              source={require('./images/user1.png')}
+              style={styles.ImageStyle}
+            />
+
+            <TextInput
+              style={{ flex: 1 }}
+              placeholder="Username"
+              underlineColorAndroid="transparent"
+            />
+          </View>
+          <View style={styles.SectionStyle}>
+            <Image
+              source={require('./images/password.png')}
+              style={styles.ImageStyle}
+            />
+
+            <TextInput
+              style={{ flex: 1 }}
+              placeholder="Password"
+              secureTextEntry={true}
+              underlineColorAndroid="transparent"
+            />
+          </View>
+
+          <View style={styles.SectionStyle}>
+            <Image
+              source={require('./images/password.png')}
+              style={styles.ImageStyle}
+            />
+
+            <TextInput
+              style={{ flex: 1 }}
+              placeholder=" Confirm Password"
+              secureTextEntry={true}
+              underlineColorAndroid="transparent"
+            />
+          </View>
+
+          <View>
+          <Text style={styles.text}>Already Sign up?</Text>
+          <TouchableOpacity  onPress={() => this.props.navigation.navigate('login')}>
+          <Text style={styles.text}> Click here</Text>
+          </TouchableOpacity>
+          </View>
+          <View style={styles.signUp}>
+          <TouchableOpacity style={styles.btnSignUp} onPress={() => this.props.navigation.navigate('login')}>
+            <Text style={styles.btntext}>Sign Up</Text>
+          </TouchableOpacity>
+          </View>
+          </View>
+          </ImageBackground>
+
+          
+        
+        
     );
   }
 }
 
 const styles = StyleSheet.create({
   
-  backgroundImage: {
-    flex: 1,
-    alignItems: 'center'
+  logo: {
+    width: 300,
+    height: 300,
   },
   logoContainer: {
     alignItems: 'center',
   },
   logoText: {
     color: 'black',
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: '500',
     marginTop: 10,
-    opacity: 0.5,
+    opacity: 0.8,
   },
   
   SectionStyle: {
@@ -132,7 +135,7 @@ btnSignUp: {
   borderRadius: 25,
   backgroundColor: '#432577',
   marginTop: 20,
-  marginHorizontal: 25
+  marginHorizontal: 25,
 },
 btntext: {
   paddingTop: 10,
@@ -141,6 +144,11 @@ btntext: {
   textAlign: 'center'
 },
 text: {
-  marginHorizontal: 15
+  marginHorizontal: 15,
+  textAlign: 'center'
+},
+backgroundImage: {
+  flex: 1,
+  alignItems: 'center'
 },
 });
