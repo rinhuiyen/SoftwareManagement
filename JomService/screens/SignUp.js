@@ -7,7 +7,8 @@ import {
   TextInput,
   Image,
   TouchableOpacity,
-  ImageBackground
+  ImageBackground,
+  AsyncStorage
 } from 'react-native';
 import user1 from './images/user1.png';
 import password from './images/password.png';
@@ -17,6 +18,27 @@ const { width: WIDTH } = Dimensions.get('window');
 export default class SignUp extends React.Component {
   static navigationOptions = {
     title: 'signUp',
+  }
+  state ={
+    name: '',
+    nameStored: ''
+  }
+  save = (name) => {
+    AsyncStorage.setItem('nameDB', JSON.stringify(name))
+  }
+
+  onSave = () =>{
+    this.setState({
+      nameStored: this.state.name,
+      name: ''
+    })
+    this.save(this.state.name)
+    this.props.navigation.navigate('login')
+  }
+  onChangeText = (text) =>{
+    this.setState({
+      name: text
+    })
   }
   render() {
     return (
@@ -40,6 +62,19 @@ export default class SignUp extends React.Component {
             <TextInput
               style={{ flex: 1 }}
               placeholder="Username"
+              onChangeText={this.onChangeText}
+              underlineColorAndroid="transparent"
+            />
+          </View>
+          <View style={styles.SectionStyle}>
+            <Image
+              source={require('./images/usercontact.png')}
+              style={styles.ImageStyle}
+            />
+
+            <TextInput
+              style={{ flex: 1 }}
+              placeholder="Email"
               underlineColorAndroid="transparent"
             />
           </View>
@@ -78,9 +113,10 @@ export default class SignUp extends React.Component {
           </TouchableOpacity>
           </View>
           <View style={styles.signUp}>
-          <TouchableOpacity style={styles.btnSignUp} onPress={() => this.props.navigation.navigate('login')}>
+          <TouchableOpacity style={styles.btnSignUp} onPress={() => this.onSave()}>
             <Text style={styles.btntext}>Sign Up</Text>
           </TouchableOpacity>
+          <Text>{this.state.nameStored}</Text>
           </View>
           </View>
           </ImageBackground>

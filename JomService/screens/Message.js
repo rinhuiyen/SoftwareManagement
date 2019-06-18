@@ -6,24 +6,33 @@ import {
     StyleSheet,
     Dimensions,
     ScrollView,
-    FlatList
+    AsyncStorage
 } from 'react-native';
 import { Constants } from 'expo';
 
 const { width: WIDTH } = Dimensions.get('window');
 
 export default class Message extends React.Component {
-
+    static navigationOptions = {
+        title: 'Job Details',
+      }
     state={
-        title: 'History',
         screenHeight: 0,
-        list : this.props.navigation.getParam('item')
+        list : this.props.navigation.getParam('item'),
+        
     }
     onContentSizeChange = (contentHeight) => {
         this.state.screenHeight = 0
         // Save the content height in state
         this.setState({ screenHeight: contentHeight });
     };
+    componentWillMount() {
+        AsyncStorage.getItem('nameDB').then((nameJSON) =>{
+          this.setState({
+            nameStored: JSON.parse(nameJSON)
+          })
+        })
+      }
     render(){
         const { params } = this.props.navigation.state;
         const message = params ? params.message : null;
@@ -54,7 +63,7 @@ export default class Message extends React.Component {
 
                     <Image style={styles.imgprofile} source={require("./images/messageClient.png")} />
                     <Text style={styles.name}>
-                        Andrew
+                        {this.state.nameStored}
                     </Text>
 
                     <View style={styles.itemprofile}>
@@ -63,7 +72,7 @@ export default class Message extends React.Component {
                             Name:
                         </Text>
                         <Text style={styles.sublabelitem}>
-                            Andrew
+                        {this.state.nameStored}
                         </Text>
                     </View>
 
@@ -75,6 +84,7 @@ export default class Message extends React.Component {
                         <Text style={styles.sublabelitem}>
                             016-22334455
                         </Text>
+                        <Text>{this.state.nameStored}</Text>
                     </View>    
                     </ScrollView> 
                 </View>
