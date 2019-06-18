@@ -1,13 +1,16 @@
 import React from 'react';
 import {
-    Button,
+    Image,
     View,
     navigation,
     Text,
     StyleSheet,
     Dimensions,
     TouchableOpacity,
+    ImageBackground
 } from 'react-native';
+import { Constants } from 'expo';
+import LA from './images/LA.jpg';
 
 const { width: WIDTH } = Dimensions.get('window');
 
@@ -38,26 +41,31 @@ export default class SelectionScreen extends React.Component {
 
     render() {
         return (
-            <View>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('main', { item: this.state.list, name: 'meng' })} style={styles.btnMain}>
-                    <Text style={styles.text}>Request for services</Text>
+            <ImageBackground source={require('./images/LA.jpg')}
+            style={{flex:1}} >
+            <View style={styles.container}>
+
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('main', { item: this.state.list})} style={styles.btnMain}>
+                    <Text style={styles.text}>Post a post</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.submitData()} style={styles.btnMain}>
-                    <Text style={styles.text}>See requests </Text>
+                    <Text style={styles.text}>See posts</Text>
                 </TouchableOpacity>
             </View>
+            </ImageBackground>
         )
     }
 }
 const styles = StyleSheet.create({
-    container: {
+    backgroundImage: {
         flex: 1,
-        padding: 30,
         alignItems: 'center',
+        
+      },
+    container: {
+        flex: 2,
         justifyContent: 'center',
-        backgroundColor: '#f4f4f4',
-        width: WIDTH - 25,
-        margin: 10,
+        padding: 8,
     },
     containerTitle: {
         fontSize: 25,
@@ -82,6 +90,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         alignItems: 'center',
+        color: '#ffffff',
     },
     prices: {
         padding: 10,

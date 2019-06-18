@@ -12,12 +12,16 @@ Dimensions
 const { width: WIDTH } = Dimensions.get('window');
 
 export default class MainScreen extends React.Component{
+    static navigationOptions = {
+        title: 'Post A Post',
+      }
     state = {
         request: [],
         jobInput : "",
         priceInput : '',
         titleInput: "",
         list : this.props.navigation.getParam('item')
+        
     }
 
 mounting(){
@@ -41,36 +45,26 @@ mounting(){
     
     render() {
         return(
-        <View>
+        <View style={styles.mainScreen}>
             <View style={styles.logoContainer}>
             <Text style={styles.logoText}>Create a Post</Text>
-            </View>
-
-
-
-
-            
+            </View>            
             <View style={styles.SectionStyle}>
-
-
             <TextInput type="text" value={this.state.titleInput} 
             onChangeText={(titleInput) => this.setState({titleInput})}
             placeholder='Job Title'
             />
             </View>
+
             <View style={styles.SectionStyle}>
-
-
             <TextInput type="text" value={this.state.jobInput} 
             onChangeText={(jobInput) => this.setState({jobInput})}
             placeholder='Job Description'
             />
             </View>
-            <View >
 
-
+            <View style={styles.SectionStyle}>
             <TextInput 
-             style={styles.SectionStyle}
              keyboardType='numeric'
              placeholder='Price'
              onChangeText={(priceInput)=> this.setState({priceInput})}
@@ -91,7 +85,12 @@ mounting(){
 }
 
 const styles = StyleSheet.create({
+    mainScreen:{
+        backgroundColor:'#fff',
+        flex:1,
+    },
     SectionStyle: {
+        textAlign: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -99,7 +98,7 @@ const styles = StyleSheet.create({
         borderWidth: .5,
         borderColor: '#000',
         height: 40,
-        borderRadius: 5 ,
+        borderRadius: 5,
         margin: 10
     },
     logoContainer: {
@@ -116,7 +115,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         color: 'rgba(255, 255, 255, 0.7)',
         fontSize: 16,
-        textAlign: 'center'
+        textAlign: 'center',
       },
       btnPost: {
         width: WIDTH -55,

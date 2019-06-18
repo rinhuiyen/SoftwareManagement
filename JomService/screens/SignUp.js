@@ -6,7 +6,8 @@ import {
   Dimensions,
   TextInput,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from 'react-native';
 import user1 from './images/user1.png';
 import password from './images/password.png';
@@ -19,12 +20,17 @@ export default class SignUp extends React.Component {
   }
   render() {
     return (
-      <View style={styles.signUpBox}>
-        <View style={styles.backgrounds}>
+        
+          <ImageBackground source={require('./images/signUpB.jpg')}
+            style={{flex:1}}>
+            <View style={styles.backgrounds}>
+            <Image source={require('./images/signUpB.jpg')}
+            style={styles.backgroundImage}/>
+
           <View style={styles.logoContainer}>
             <Text style={styles.logoText}>Sign Up</Text>
           </View>
-
+          
           <View style={styles.SectionStyle}>
             <Image
               source={require('./images/user1.png')}
@@ -68,17 +74,20 @@ export default class SignUp extends React.Component {
           <View>
           <Text style={styles.text}>Already Sign up?</Text>
           <TouchableOpacity  onPress={() => this.props.navigation.navigate('login')}>
-          <Text style={styles.texT}> Click here</Text>
+          <Text style={styles.text}> Click here</Text>
           </TouchableOpacity>
           </View>
           <View style={styles.signUp}>
-          <TouchableOpacity style={styles.btnSignUp}>
+          <TouchableOpacity style={styles.btnSignUp} onPress={() => this.props.navigation.navigate('login')}>
             <Text style={styles.btntext}>Sign Up</Text>
           </TouchableOpacity>
           </View>
+          </View>
+          </ImageBackground>
 
-        </View>
-       </View> 
+          
+        
+        
     );
   }
 }
@@ -124,7 +133,7 @@ btnSignUp: {
   width: WIDTH -55,
   height: 45,
   borderRadius: 25,
-  backgroundColor: '#607446',
+  backgroundColor: '#432577',
   marginTop: 20,
   marginHorizontal: 25,
 },
@@ -138,23 +147,8 @@ text: {
   marginHorizontal: 15,
   textAlign: 'center'
 },
-
-texT: {
-  marginHorizontal: 15,
-  textAlign: 'center',
-  fontWeight: 'bold'
+backgroundImage: {
+  flex: 1,
+  alignItems: 'center'
 },
-
-backgrounds: {
-  backgroundColor: '#29b87e',
-  justifyContent: 'center',
-},
-
-signUp: {
-  paddingBottom: 20,
-},
-
-signUpBox: {
-  paddingTop: 70
-}
 });
