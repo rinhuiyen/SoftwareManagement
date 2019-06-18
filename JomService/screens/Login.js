@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import user from './images/user.png';
-import user1 from './images/user1.png';
+import user1 from './images/username.png';
 import password from './images/password.png';
 
 const { width: WIDTH } = Dimensions.get('window');
@@ -17,7 +17,7 @@ const { width: WIDTH } = Dimensions.get('window');
 export default class Login extends React.Component {
   static navigationOptions = {
     title: 'login',
-  }
+  }    
   render() {
     return (
       <View style={styles.backgrounds}>
@@ -28,7 +28,7 @@ export default class Login extends React.Component {
 
         <View style={styles.SectionStyle}>
           <Image
-            source={require('./images/user1.png')}
+            source={require('./images/username.png')}
             style={styles.ImageStyle}
           />
 
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#F4F4F4',
     borderWidth: .5,
     borderColor: '#000',
     height: 40,
@@ -100,7 +100,8 @@ ImageStyle: {
     height: 25,
     width: 25,
     resizeMode : 'stretch',
-    alignItems: 'center'
+    alignItems: 'center',
+    opacity:0.4,
 },
 btnLogin: {
   width: WIDTH -55,

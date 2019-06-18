@@ -72,6 +72,9 @@ export default class Message extends React.Component {
                             Name:
                         </Text>
                         <Text style={styles.sublabelitem}>
+                            Andrew
+                        </Text>
+                        <Text style={styles.sublabelitem}>
                         {this.state.nameStored}
                         </Text>
                     </View>
