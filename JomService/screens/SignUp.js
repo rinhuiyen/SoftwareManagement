@@ -42,13 +42,7 @@ export default class SignUp extends React.Component {
   }
   render() {
     return (
-        
-          <ImageBackground source={require('./images/signUpB.jpg')}
-            style={{flex:1}}>
-            <View style={styles.backgrounds}>
-            <Image source={require('./images/signUpB.jpg')}
-            style={styles.backgroundImage}/>
-
+          <View>
           <View style={styles.logoContainer}>
             <Text style={styles.logoText}>Sign Up</Text>
           </View>
@@ -119,7 +113,6 @@ export default class SignUp extends React.Component {
           <Text>{this.state.nameStored}</Text>
           </View>
           </View>
-          </ImageBackground>
 
           
         
@@ -169,7 +162,7 @@ btnSignUp: {
   width: WIDTH -55,
   height: 45,
   borderRadius: 25,
-  backgroundColor: '#432577',
+  backgroundColor: '#607446',
   marginTop: 20,
   marginHorizontal: 25,
 },

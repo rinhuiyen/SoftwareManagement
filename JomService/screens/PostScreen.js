@@ -17,6 +17,9 @@ const { height } = Dimensions.get('window');
 
 
 export default class PostScreen extends React.Component {
+    static navigationOptions = {
+        title: 'View Requests',
+      }
     state = {
         screenHeight: 0,
         list : this.props.navigation.getParam('item')
@@ -107,6 +110,7 @@ const styles = StyleSheet.create({
         margin: 15,
         justifyContent: 'center',
         borderRadius: 10,
+        backgroundColor: "#0000",
         backgroundColor: "#b8b894",
         shadowOpacity: 0.75,
         shadowRadius: 2,
@@ -114,10 +118,6 @@ const styles = StyleSheet.create({
         elevation: 3,
         shadowOffset: { height: 10, width: 10 },
         width: WIDTH - 25,
-        borderTopWidth: 1,
-        borderLeftWidth: 1,
-        borderRightWidth: 1,
-        borderColor: 'black'
     },
     text: {
         padding: 10,
@@ -128,16 +128,14 @@ const styles = StyleSheet.create({
     prices: {
         padding: 10,
         fontSize: 20,
-        alignSelf: 'flex-end',
-        fontWeight: 'bold'
+        alignSelf: 'flex-end'
     },
     btnPost: {
         width: WIDTH - 25,
         height: 45,
         borderRadius: 10,
-        backgroundColor: '#607446',
+        backgroundColor: '#d3d3d3',
         marginTop: 5,
-        opacity: 0.9
     },
     btnMain: {
         width: WIDTH - 25,
@@ -145,7 +143,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: '#607446',
         marginTop: 5,
-        margin: 10,
-        opacity: 0.9
+        margin: 10
     },
 })

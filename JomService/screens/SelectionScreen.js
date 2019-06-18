@@ -10,12 +10,15 @@ import {
     ImageBackground
 } from 'react-native';
 import { Constants } from 'expo';
-import LA from './images/LA.jpg';
+import DeliveryM from './images/deliveryM.jpg';
 
 const { width: WIDTH } = Dimensions.get('window');
 
 
 export default class SelectionScreen extends React.Component {
+    static navigationOptions = {
+        title: 'Main Page',
+      }
     state = {
         request: [],
         jobInput: "",
@@ -41,31 +44,30 @@ export default class SelectionScreen extends React.Component {
 
     render() {
         return (
-            <ImageBackground source={require('./images/LA.jpg')}
-            style={{flex:1}} >
             <View style={styles.container}>
+                <Image source={require('./images/deliveryM.jpg')} style={styles.backgroundImage}/> 
 
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('main', { item: this.state.list})} style={styles.btnMain}>
-                    <Text style={styles.text}>Post a post</Text>
+                    <Text style={styles.text}>Post a Request</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.submitData()} style={styles.btnMain}>
-                    <Text style={styles.text}>See posts</Text>
+                    <Text style={styles.text}>View Requests</Text>
                 </TouchableOpacity>
             </View>
-            </ImageBackground>
         )
     }
 }
 const styles = StyleSheet.create({
     backgroundImage: {
-        flex: 1,
-        alignItems: 'center',
-        
+        paddingTop:0,
+        paddingBottom:50,
+        height:300,
+        width:400,
       },
     container: {
         flex: 2,
         justifyContent: 'center',
-        padding: 8,
+        paddingTop: 8,
     },
     containerTitle: {
         fontSize: 25,

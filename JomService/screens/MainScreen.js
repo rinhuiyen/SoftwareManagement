@@ -13,7 +13,7 @@ const { width: WIDTH } = Dimensions.get('window');
 
 export default class MainScreen extends React.Component{
     static navigationOptions = {
-        title: 'Post A Post',
+        title: 'Post A Request',
       }
     state = {
         request: [],
