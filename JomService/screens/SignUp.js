@@ -20,13 +20,7 @@ export default class SignUp extends React.Component {
   }
   render() {
     return (
-        
-          <ImageBackground source={require('./images/signUpB.jpg')}
-            style={{flex:1}}>
-            <View style={styles.backgrounds}>
-            <Image source={require('./images/signUpB.jpg')}
-            style={styles.backgroundImage}/>
-
+          <View>
           <View style={styles.logoContainer}>
             <Text style={styles.logoText}>Sign Up</Text>
           </View>
@@ -83,7 +77,6 @@ export default class SignUp extends React.Component {
           </TouchableOpacity>
           </View>
           </View>
-          </ImageBackground>
 
           
         

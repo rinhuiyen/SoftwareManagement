@@ -16,6 +16,9 @@ const { width: WIDTH } = Dimensions.get('window');
 
 
 export default class SelectionScreen extends React.Component {
+    static navigationOptions = {
+        title: 'Main Page',
+      }
     state = {
         request: [],
         jobInput: "",

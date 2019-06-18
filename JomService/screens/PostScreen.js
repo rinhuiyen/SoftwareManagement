@@ -17,6 +17,9 @@ const { height } = Dimensions.get('window');
 
 
 export default class PostScreen extends React.Component {
+    static navigationOptions = {
+        title: 'View Requests',
+      }
     state = {
         screenHeight: 0,
         list : this.props.navigation.getParam('item')

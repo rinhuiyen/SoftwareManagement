@@ -13,7 +13,9 @@ import { Constants } from 'expo';
 const { width: WIDTH } = Dimensions.get('window');
 
 export default class Message extends React.Component {
-
+    static navigationOptions = {
+        title: 'Request Accepted',
+      }
     state={
         title: 'History',
         screenHeight: 0,
