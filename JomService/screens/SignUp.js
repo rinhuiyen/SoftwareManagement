@@ -68,7 +68,7 @@ export default class SignUp extends React.Component {
           <View>
           <Text style={styles.text}>Already Sign up?</Text>
           <TouchableOpacity  onPress={() => this.props.navigation.navigate('login')}>
-          <Text style={styles.text}> Click here</Text>
+          <Text style={styles.textBold}> Click here</Text>
           </TouchableOpacity>
           </View>
           <View style={styles.signUp}>
@@ -139,6 +139,11 @@ btntext: {
 text: {
   marginHorizontal: 15,
   textAlign: 'center'
+},
+textBold:{
+  marginHorizontal: 15,
+  textAlign: 'center',
+  fontWeight: 'bold'
 },
 backgroundImage: {
   flex: 1,

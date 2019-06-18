@@ -53,7 +53,7 @@ export default class Login extends React.Component {
         </View>
 
         <View>
-        <Text style={styles.text}>Forgot Password? Click here </Text>
+        <Text style={styles.text}>Forgot Password? <Text style={styles.bold}>Click here </Text></Text>
         </View>
 
         <TouchableOpacity style={styles.btnLogin}  onPress={() => this.props.navigation.navigate('selection')}>
@@ -118,5 +118,9 @@ btntext: {
 },
 text: {
   marginHorizontal: 15
+},
+
+bold: {
+  fontWeight: 'bold'
 }
 });

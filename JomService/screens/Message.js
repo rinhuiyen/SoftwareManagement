@@ -114,7 +114,8 @@ const styles = StyleSheet.create({
         marginTop:-45,
         marginLeft:80,
         fontSize:18,
-        color:"black"
+        color:"black",
+        fontWeight: 'bold'
     },
     sublabelitem:{
         marginTop:10,
@@ -169,6 +170,7 @@ const styles = StyleSheet.create({
     text: {
         padding: 10,
         fontSize: 20,
+        fontWeight: 'bold'
     },
     prices: {
         padding: 10,

@@ -143,6 +143,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: '#607446',
         marginTop: 5,
-        margin: 10
+        margin: 15 
     },
 })
