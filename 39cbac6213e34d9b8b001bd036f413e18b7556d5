@@ -1,0 +1,92 @@
+[33mcommit 4d2bc2e0f622123223682a9c2c685c26b63a14c8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 85cca54 a678f8a
+Author: Rranddy <randywong1029@gmail.com>
+Date:   Tue Jun 18 00:21:49 2019 +0800
+
+    update on message
+
+[33mcommit a678f8ac9c1d52d8904539e65b1b9a6af771d7d1[m
+Merge: b1e99e0 7c0f9f0
+Author: rinhuiyen <38566172+rinhuiyen@users.noreply.github.com>
+Date:   Tue Jun 18 00:19:02 2019 +0800
+
+    Merge branch 'master' of https://github.com/rinhuiyen/SoftwareManagement
+
+[33mcommit b1e99e08374ec133676d97ec6f3998dff1d5afb5[m
+Author: rinhuiyen <38566172+rinhuiyen@users.noreply.github.com>
+Date:   Tue Jun 18 00:18:03 2019 +0800
+
+    Message Page Final Touches on client
+    
+    Added client information on message page to ensure that job-seeker has the client's information to keep in contact after accepting the client's request.
+
+[33mcommit 85cca541947d5d33d4c43e9b26e2dc316b517617[m
+Author: Rranddy <randywong1029@gmail.com>
+Date:   Mon Jun 17 23:10:36 2019 +0800
+
+    Revert "Merge branch 'master' of https://github.com/rinhuiyen/SoftwareManagement"
+    
+    This reverts commit 7c0f9f0d1ce8770a880f1ecbae62bfd53b776cd7, reversing
+    changes made to 29ff219ef8ac33891055ac794c4299e6d0f15789.
+
+[33mcommit 7c0f9f0d1ce8770a880f1ecbae62bfd53b776cd7[m
+Merge: 29ff219 e613a27
+Author: Rranddy <randywong1029@gmail.com>
+Date:   Mon Jun 17 23:04:16 2019 +0800
+
+    Merge branch 'master' of https://github.com/rinhuiyen/SoftwareManagement
+
+[33mcommit 29ff219ef8ac33891055ac794c4299e6d0f15789[m
+Author: Rranddy <randywong1029@gmail.com>
+Date:   Mon Jun 17 23:04:09 2019 +0800
+
+    changed logo
+
+[33mcommit e613a275ea2f6fd3804dcff539ac2b9b62a87ce1[m
+Author: CShuen <40314782+CShuen@users.noreply.github.com>
+Date:   Mon Jun 17 22:36:37 2019 +0800
+
+    Debugging Post Screen
+
+[33mcommit 9c07eb279735d144ec2bc4827e15648ee27014d7[m
+Merge: 2740c68 9caee58
+Author: rinhuiyen <38566172+rinhuiyen@users.noreply.github.com>
+Date:   Mon Jun 17 22:29:26 2019 +0800
+
+    test
+
+[33mcommit 2740c685ab2add108f98e6d9d11f9b0d633ebc1d[m
+Merge: 974e958 a4d9eed
+Author: rinhuiyen <38566172+rinhuiyen@users.noreply.github.com>
+Date:   Mon Jun 17 22:27:26 2019 +0800
+
+    Testing
+    
+    Testing
+
+[33mcommit 9caee582128bd6d71a40cff3d31c380e25c2ee7a[m
+Author: Rranddy <randywong1029@gmail.com>
+Date:   Mon Jun 17 22:19:32 2019 +0800
+
+    Revert "Debugging Post Screen"
+    
+    This reverts commit 39cbac6213e34d9b8b001bd036f413e18b7556d5.
+
+[33mcommit 070bf0b9808bb5c125547b8131538a7014a0ae42[m
+Merge: 3c2939a 39cbac6
+Author: Rranddy <randywong1029@gmail.com>
+Date:   Mon Jun 17 22:19:01 2019 +0800
+
+    Merge branch 'master' of https://github.com/rinhuiyen/SoftwareManagement
+
+[33mcommit 3c2939aa0492913466f8885d66bbebc48125031c[m
+Author: Rranddy <randywong1029@gmail.com>
+Date:   Mon Jun 17 22:18:38 2019 +0800
+
+    dont use this shit
+
+[33mcommit 39cbac6213e34d9b8b001bd036f413e18b7556d5[m
+Author: CShuen <40314782+CShuen@users.noreply.github.com>
+Date:   Mon Jun 17 22:15:02 2019 +0800
+
+    Debugging Post Screen

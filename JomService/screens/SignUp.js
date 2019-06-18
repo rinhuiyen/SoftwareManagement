@@ -133,7 +133,7 @@ btnSignUp: {
   width: WIDTH -55,
   height: 45,
   borderRadius: 25,
-  backgroundColor: '#432577',
+  backgroundColor: '#607446',
   marginTop: 20,
   marginHorizontal: 25,
 },
